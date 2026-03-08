@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+#include<graphics.h>
+#include<conio.h>
+
+void main()
+{
+int gd=DETECT,gm,i,len;
+char text[100];
+
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+printf("Enter text: ");
+gets(text);
+
+len=strlen(text);
+
+for(i=0;i<len;i++)
+{
+if(text[i]!=' ')
+printf("%c\t",text[i]);
+else
+printf("\n\n");
+}
+
+getch();
+closegraph();
+}
