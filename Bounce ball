@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<dos.h>
+#define GROUND 420
+
+void main()
+{
+int gd=DETECT,gm;
+int x=50,y=0,dir=1;
+
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+while(!kbhit())
+{
+cleardevice();
+
+line(0,GROUND,getmaxx(),GROUND);
+
+circle(x,y,20);
+
+if(dir==1)
+y+=10;
+else
+y-=10;
+
+if(y>=GROUND-20)
+dir=0;
+
+if(y<=0)
+dir=1;
+
+delay(50);
+}
+
+getch();
+closegraph();
+}
