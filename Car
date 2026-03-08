@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<dos.h>
+
+void main()
+{
+int gd=DETECT,gm,i;
+
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+for(i=0;i<=500;i++)
+{
+cleardevice();
+
+rectangle(40+i,30,110+i,60);
+rectangle(0+i,60,160+i,110);
+
+line(40+i,30,27+i,60);
+line(110+i,30,107+i,60);
+
+fillellipse(40+i,110,15,15);
+fillellipse(120+i,110,15,15);
+
+delay(20);
+}
+
+getch();
+closegraph();
+}
