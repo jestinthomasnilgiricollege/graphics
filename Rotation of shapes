@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<math.h>
+#include<conio.h>
+
+void main()
+{
+int gd=DETECT,gm;
+int x1,y1,x2,y2,x3,y3;
+int x1n,y1n,x2n,y2n,x3n,y3n;
+float angle,t;
+
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+printf("Enter triangle coordinates: ");
+scanf("%d%d%d%d%d%d",&x1,&y1,&x2,&y2,&x3,&y3);
+
+line(x1,y1,x2,y2);
+line(x2,y2,x3,y3);
+line(x3,y3,x1,y1);
+
+printf("Enter rotation angle: ");
+scanf("%f",&angle);
+
+t=3.14*angle/180;
+
+x1n=x1*cos(t)-y1*sin(t);
+y1n=x1*sin(t)+y1*cos(t);
+
+x2n=x2*cos(t)-y2*sin(t);
+y2n=x2*sin(t)+y2*cos(t);
+
+x3n=x3*cos(t)-y3*sin(t);
+y3n=x3*sin(t)+y3*cos(t);
+
+line(x1n,y1n,x2n,y2n);
+line(x2n,y2n,x3n,y3n);
+line(x3n,y3n,x1n,y1n);
+
+getch();
+closegraph();
+}
