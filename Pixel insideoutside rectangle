@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<dos.h>
+
+void main()
+{
+int gd=DETECT,gm;
+int x,y;
+
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI");
+
+rectangle(60,60,120,120);
+
+printf("Enter pixel coordinates: ");
+scanf("%d%d",&x,&y);
+
+putpixel(x,y,RED);
+
+if(x>=60 && x<=120 && y>=60 && y<=120)
+printf("Point Inside Rectangle");
+else
+printf("Point Outside Rectangle");
+
+getch();
+closegraph();
